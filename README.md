@@ -1,3 +1,3 @@
-Alexa Skill for Give Directly (https://www.givedirectly.org/)
+Alexa Skill for Groupon (http://partner-api.groupon.com/help/)
 
-It has one feature to ask how Give Directly helped that day. Data is pulled from the GDLive API.
+It has one feature to ask for a local deal.
