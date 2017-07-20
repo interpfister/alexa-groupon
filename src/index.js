@@ -6,9 +6,9 @@ var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
 var languageStrings = {    
     "en-US": {
         "translation": {            
-            "SKILL_NAME" : "GiveDirectly (unofficial)",
-            "HELP_MESSAGE" : "Ask me how GiveDirectly helped today!",
-            "HELP_REPROMPT" : "Ask how recipients used their transfers.",
+            "SKILL_NAME" : "Groupon (unofficial)",
+            "HELP_MESSAGE" : "Ask me for local Groupon deals!",
+            "HELP_REPROMPT" : "Get local deals from Groupon.",
             "STOP_MESSAGE" : "Goodbye!"
         }
     }    
@@ -25,12 +25,9 @@ exports.handler = function(event, context, callback) {
 
 var handlers = {
     'LaunchRequest': function () {
-        this.emit('GetPersonHelped');
-    },
-    'GetPersonHelpedIntent': function () {
-        this.emit('GetPersonHelped');
-    },      
-    'GetPersonHelped': function () {
+        this.emit('FindLocalDealsIntent');
+    },   
+    'FindLocalDealsIntent': function () {
         outputResult(this, function(results) {
             console.log(results);
             var index = Math.floor(Math.random() * results.length);
@@ -51,17 +48,17 @@ var handlers = {
 };
 
 function outputResult(obj, findFunction) {
-    request('https://www.givedirectly.org/newsfeed.json', function (error, response, body) {
+    request('https://partner-api.groupon.com/deals.json?tsToken=US_AFF_0_201236_212556_0&offset=0&limit=50', function (error, response, body) {
       if (!error && response.statusCode == 200) {
         var json = JSON.parse(body);
-        var elem = findFunction(json);
+        var elem = findFunction(json.deals);
         output(obj, elem);
       }
     });
 }
 
 function output(obj, elem) {
-    var message = elem.surveyPreview.response;
+    var message = `Here's a deal: ${elem.title}`;
     
     obj.emit(':tellWithCard', message, obj.t("SKILL_NAME"), message);
 }

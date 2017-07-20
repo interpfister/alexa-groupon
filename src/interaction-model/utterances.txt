@@ -1,3 +1,3 @@
-GetPersonHelpedIntent how did GiveDirectly help today
-GetPersonHelpedIntent how did recipients use the transfer
-GetPersonHelpedIntent what did they do with the money
+FindLocalDealsIntent What are nearby deals?
+FindLocalDealsIntent What are some good deals nearby?
+FindLocalDealsIntent What's on groupon today?

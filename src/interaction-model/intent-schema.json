@@ -1,7 +1,7 @@
 {
   "intents": [
     {
-      "intent": "GetPersonHelpedIntent"
+      "intent": "FindLocalDealsIntent"
     },    
     {
       "intent": "AMAZON.HelpIntent"
