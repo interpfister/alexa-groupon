@@ -1,11 +1,11 @@
 {
-  "name": "alexa-givedirectly",
+  "name": "alexa-groupon",
   "version": "1.0.0",
   "description": "I18n version of fact skill.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/interpfister/alexa-givedirectly.git"
+    "url": "git+https://github.com/interpfister/alexa-groupon.git"
   },
   "scripts": {
     "test": "lambda-local -l index.js -h handler -e event-samples/FindLocalDealsIntent.js",

@@ -6,9 +6,9 @@ var APP_ID = undefined;  // TODO replace with your app ID (OPTIONAL).
 var languageStrings = {    
     "en-US": {
         "translation": {            
-            "SKILL_NAME" : "Groupon (unofficial)",
-            "HELP_MESSAGE" : "Ask me for local Groupon deals!",
-            "HELP_REPROMPT" : "Get local deals from Groupon.",
+            "SKILL_NAME" : "Local Deals",
+            "HELP_MESSAGE" : "Ask me for local deals!",
+            "HELP_REPROMPT" : "Ask me for a local deal.",
             "STOP_MESSAGE" : "Goodbye!"
         }
     }    
